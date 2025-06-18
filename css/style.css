@@ -1,0 +1,668 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8; /* Color de fondo general */
+}
+
+.container {
+    max-width: 1200px; /* Aumentar ancho máximo para pantallas grandes */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinear elementos del menú horizontalmente */
+}
+
+nav ul li {
+    margin-left: 30px; /* Aumentar espacio entre elementos del menú */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff4500;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/imagenes/carrusel6.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    color: white;
+    text-align: center;
+    padding: 150px 20px; /* Mayor padding para altura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    position: relative; /* Para el pseudo-elemento */
+}
+
+.hero-section::before { /* Pseudo-elemento para overlay oscuro */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro */
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 2; /* Asegurar que el contenido esté sobre el overlay */
+}
+
+.hero-section h2 {
+    color: white;
+    font-size: 4em; /* Tamaño de fuente más grande */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.hero-section p {
+    font-size: 1.8em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #ff4500;
+    color: white;
+    padding: 15px 30px; /* Mayor padding */
+    font-size: 1.3em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Añadir transform */
+}
+
+.btn-cta:hover {
+    background-color: #e03e00;
+    transform: translateY(-2px); /* Efecto hover sutil */
+}
+
+/* Secciones Generales */
+section {
+    padding: 80px 0; /* Mayor padding vertical */
+}
+
+#colecciones, #beneficios {
+    background-color: #fff; /* Fondo blanco para secciones */
+}
+
+/* Sección de Colecciones */
+.collections-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px; /* Aumentar espacio entre items */
+}
+
+.collection-item {
+    width: 300px;
+    text-align: left;
+    background-color: #f9f9f9; /* Fondo ligeramente diferente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover {
+    transform: translateY(-5px); /* Efecto hover en items */
+}
+
+.collection-item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.collection-item h3 {
+    margin-top: 0;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.collection-item p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.collection-item .btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.collection-item .btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Sección de Productos Destacados (Ofertas) */
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustar minmax */
+    gap: 40px; /* Aumentar espacio */
+    max-width: 1200px; /* Asegurar que coincida con el container */
+    margin: 0 auto;
+}
+
+.product-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.product-item h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.4em;
+    color: #555;
+}
+
+.product-item .price {
+    color: #ff4500;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.product-item .original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9em;
+    margin-right: 8px;
+    font-weight: normal;
+}
+
+.product-item .btn-wishlist {
+    display: block; /* Botón de ancho completo */
+    width: 100%;
+    background-color: #28a745; /* Color de botón diferente */
+    color: white;
+    border: none;
+    padding: 12px 0; /* Padding vertical */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    text-align: center;
+}
+
+.product-item .btn-wishlist:hover {
+    background-color: #218838;
+}
+
+/* Lista de Deseos */
+.wishlist-display {
+    margin-top: 60px; /* Mayor margen superior */
+    text-align: left;
+    max-width: 800px; /* Mayor ancho */
+    margin: 60px auto 0;
+    background-color: white;
+    padding: 30px; /* Mayor padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.wishlist-display h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px; /* Mayor padding */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-align: left;
+}
+
+#miLista {
+    list-style: disc;
+    padding-left: 25px; /* Mayor padding */
+}
+
+#miLista li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Sección de Beneficios */
+.benefits-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.benefit {
+    width: 250px; /* Mayor ancho para los beneficios */
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.benefit i {
+    font-size: 4em; /* Iconos más grandes */
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.benefit p {
+    margin: 0;
+    font-size: 1.1em;
+    color: #666;
+}
+
+
+/* Sección de Suscripción */
+.subscription-section {
+    background-color: #e8f0fe; /* Fondo ligero */
+    padding: 80px 0;
+}
+
+.subscription-section .container {
+    max-width: 600px;
+    background-color: white;
+    padding: 40px; /* Mayor padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.subscription-section h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+#accesoForm {
+    text-align: left;
+}
+
+#accesoForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+#accesoForm input[type="email"] {
+    width: 100%;
+    padding: 12px; /* Mayor padding */
+    margin-bottom: 20px; /* Mayor margen */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#accesoForm button {
+    display: block; /* Botón de ancho completo */
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+#accesoForm button:hover {
+    background-color: #218838;
+}
+
+#resultado-suscripcion {
+    margin-top: 20px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 30px 0; /* Mayor padding */
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.8em; /* Iconos sociales más grandes */
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #007bff;
+}
+
+/* ===============================
+   Media Queries para Responsividad
+   =============================== */
+
+/* Tablet y pantallas más pequeñas */
+@media (max-width: 991px) {
+    h2 {
+        font-size: 2em;
+    }
+
+    .hero-section h2 {
+        font-size: 3em;
+    }
+
+    .hero-section p {
+        font-size: 1.3em;
+    }
+
+    .btn-cta {
+        padding: 12px 25px;
+        font-size: 1.2em;
+    }
+
+    .collections-container,
+    .products-container,
+    .benefits-container {
+        gap: 30px; /* Ajustar espacio */
+    }
+
+    .collection-item,
+    .benefit {
+        width: calc(50% - 30px); /* Dos columnas con espacio */
+        max-width: 350px; /* Limitar ancho en pantallas medianas */
+    }
+
+    .product-item {
+        width: calc(50% - 30px); /* Dos columnas */
+        max-width: 400px; /* Limitar ancho */
+        margin: 0 auto; /* Centrar si hay menos de 2 por fila */
+    }
+
+    .wishlist-display {
+        max-width: 90%; /* Ajustar ancho máximo */
+    }
+
+    .subscription-section .container {
+         max-width: 90%;
+         padding: 30px;
+    }
+
+    footer .container {
+        justify-content: center; /* Centrar elementos del footer */
+        text-align: center;
+    }
+
+    footer p,
+    footer .social-links {
+        width: 100%; /* Ocupar ancho completo */
+        margin-bottom: 15px;
+    }
+
+     footer .social-links {
+         margin-top: 10px;
+     }
+}
+
+/* Móviles y pantallas muy pequeñas */
+@media (max-width: 767px) {
+    header .container {
+        flex-direction: column; /* Apilar logo y menú */
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column; /* Apilar elementos del menú */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Espacio vertical */
+    }
+
+    .hero-section {
+        padding: 80px 20px; /* Reducir padding */
+        min-height: 400px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em; /* Reducir tamaño de fuente */
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+
+    section {
+        padding: 50px 0; /* Reducir padding de secciones */
+    }
+
+
+    .collections-container,
+    .products-container,
+    .benefits-container {
+        gap: 20px; /* Reducir espacio */
+    }
+
+    .collection-item,
+    .benefit {
+        width: 90%; /* Un item por fila */
+        max-width: 300px; /* Limitar ancho */
+    }
+
+     .product-item {
+        width: 90%; /* Un item por fila */
+        max-width: 300px; /* Limitar ancho */
+     }
+
+
+    .benefit i {
+        font-size: 3.5em; /* Ajustar tamaño de íconos */
+    }
+
+    .wishlist-display {
+        padding: 20px;
+    }
+
+    .wishlist-display h3 {
+        font-size: 1.5em;
+    }
+
+
+    .subscription-section .container {
+         padding: 20px;
+    }
+
+    #accesoForm input[type="email"],
+    #accesoForm button {
+        font-size: 1em;
+    }
+}
+
+/* Estilos para la Lista de Deseos (formato de cuadro) */
+.wishlist-display #miLista {
+    list-style: none; /* Remover los puntos de lista por defecto */
+    padding: 0; /* Remover padding por defecto */
+    margin: 0; /* Remover margen por defecto */
+    border: 1px solid #ccc; /* Borde general del cuadro */
+    border-radius: 4px;
+    overflow: hidden; /* Asegurar que los bordes redondeados funcionen con los items */
+}
+
+.wishlist-display #miLista li {
+    display: flex; /* Usar Flexbox para organizar los spans como columnas */
+    justify-content: space-between; /* Espacio entre columnas */
+    align-items: center; /* Alinear items verticalmente */
+    padding: 10px 15px; /* Espaciado dentro de cada fila */
+    border-bottom: 1px solid #eee; /* Separador entre filas */
+    background-color: #fff; /* Fondo para las filas */
+}
+
+.wishlist-display #miLista li:last-child {
+    border-bottom: none; /* No mostrar borde inferior en el último item */
+}
+
+.wishlist-display #miLista li span {
+    flex: 1; /* Permitir que los spans crezcan y ocupen espacio */
+    padding: 0 10px; /* Espaciado interno de las "columnas" */
+    text-align: left; /* Alineación del texto */
+}
+
+/* Anchos aproximados para simular columnas */
+.wishlist-display #miLista li .item-name {
+    flex: 2; /* El nombre ocupa más espacio */
+}
+
+.wishlist-display #miLista li .item-qty {
+    flex: 0.5; /* La cantidad ocupa menos espacio */
+    text-align: center;
+}
+
+.wishlist-display #miLista li .item-price,
+.wishlist-display #miLista li .item-subtotal {
+    flex: 1; /* Precio unitario y subtotal ocupan espacio similar */
+    text-align: right; /* Alinear valores numéricos a la derecha */
+}
+
+/* Estilos para los totales y el botón de vaciar lista */
+.wishlist-display .wishlist-totals {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #eee; /* Separador superior */
+    text-align: right; /* Alinear totales a la derecha */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.wishlist-display .wishlist-totals p {
+    margin: 5px 0;
+}
+
+.wishlist-display #btn-clear-wishlist {
+    display: block; /* Botón de ancho completo */
+    width: auto; /* Auto ancho basado en contenido si se prefiere */
+    margin: 20px auto 0; /* Centrar el botón debajo de los totales */
+    padding: 10px 20px;
+    background-color: #dc3545; /* Color rojo para "Vaciar" */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.wishlist-display #btn-clear-wishlist:hover {
+    background-color: #c82333;
+}
+
+/* Ajustes responsive para la lista de deseos */
+@media (max-width: 767px) {
+    .wishlist-display #miLista li {
+        flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+        align-items: flex-start; /* Alinear items a la izquierda */
+    }
+
+    .wishlist-display #miLista li span {
+        width: 100%; /* Ocupar ancho completo al apilar */
+        padding: 5px 0; /* Espaciado vertical */
+        text-align: left; /* Alinear texto a la izquierda */
+    }
+
+     .wishlist-display .wishlist-totals {
+         text-align: center; /* Centrar totales en móviles */
+     }
+
+      .wishlist-display #btn-clear-wishlist {
+          width: 90%; /* Ancho mayor para el botón en móviles */
+      }
+}
+
+/* Tablet y pantallas más pequeñas (ajuste específico si es necesario, aunque la versión móvil ya cubre gran parte) */
+@media (max-width: 991px) {
+     /* Puedes añadir ajustes aquí si el layout de columnas no se ve bien en tablets */
+     /* Por ahora, los estilos para móviles y desktop deberían ser suficientes */
+}
+    
